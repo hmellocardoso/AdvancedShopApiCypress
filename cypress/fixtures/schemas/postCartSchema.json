@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "userId": {
+      "type": "integer"
+    },
+    "productsInCart": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "productId": {
+            "type": "integer"
+          },
+          "productName": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "quantity": {
+            "type": "integer"
+          },
+          "imageUrl": {
+            "type": "string"
+          },
+          "color": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "inStock": {
+                "type": "integer"
+              }
+            },
+            "required": ["code", "name", "inStock"],
+            "additionalProperties": false
+          },
+          "exists": {
+            "type": "boolean"
+          },
+          "hasWarranty": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "productId",
+          "productName",
+          "price",
+          "quantity",
+          "imageUrl",
+          "color",
+          "exists",
+          "hasWarranty"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["userId", "productsInCart"],
+  "additionalProperties": false
+}
+
